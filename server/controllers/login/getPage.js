@@ -1,7 +1,7 @@
-
+const path = require('path');
 
 const getPage =  (req, res) => {
-    //TODO: create html login file, send it here
+    res.sendFile(path.join(__dirname, '..', '..', '..', 'public', 'login.html'));
 };
 
 

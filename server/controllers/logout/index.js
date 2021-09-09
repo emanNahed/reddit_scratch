@@ -1,5 +1,6 @@
 const logout=  (req, res) => {
-    //TODO: delete session id from cookie
+    req.clearCookie(process.env.COOKIE_AUTH);
+    res.redirect('/');
 };
 
 module.exports = logout;
