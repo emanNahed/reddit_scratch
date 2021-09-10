@@ -1,7 +1,7 @@
 const button = document.getElementById('form-row-submit');
 const inputs = document.querySelectorAll('input');
 const constraints = document.querySelectorAll('.constraints');
-
+const body = document.querySelector('body');
 console.log(button);
 const signup = (e) => {
     e.preventDefault();
@@ -21,7 +21,7 @@ const signup = (e) => {
             if (response.redirected)
                 window.location.href = response.url;
             else return response.json();
-        }).then(data => serverMessage.innerText = data.message);
+        }).then(data => body.innerText = data.message);
     
 };
 
