@@ -3,6 +3,7 @@ const {checkEmail, addUser} = require('../../database/queries');
 const bcrypt = require('bcrypt');
 const signup = (req, res) => {
     const user = req.body;
+
     const userValid = userReg.validateAsync(user);
     const userExist = (rows) => {
         if(rows.rowCount > 0){

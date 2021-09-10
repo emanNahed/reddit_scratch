@@ -9,7 +9,7 @@ const signin = (req, res) => {
     const userValidation = userLogin.validateAsync(user);
 
     userValidation
-    .then(user =>     checkEmail(user.email))
+    .then(user => checkEmail(user.email))
     .then(({rows}) =>  {
         return {rows:rows, result: bcrypt.compare(rows[0].password, user.password)};
     })
@@ -23,7 +23,7 @@ const signin = (req, res) => {
 
         res.cookie(process.env.COOKIE_AUTH, token, {httponly: true, secure: true}).json('replace me with redirect');
     })
-    .catch(err => res.json(err.message));
+    .catch(err => res.status(404).json(err.message));
 };
 
 

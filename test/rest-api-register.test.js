@@ -3,6 +3,7 @@ const request = require('supertest');
 const app = require('../server/app');
 const dbBuild = require('../server/database/config/build');
 const  connection  = require('../server/database/config/connection');
+const { describe } = require('../server/utils/validations/userReg');
 
 
 describe('1. test register route', ()=>{
@@ -25,10 +26,27 @@ describe('1. test register route', ()=>{
         .end((err, res) =>{
             if(err) return done(err);
             done();
-        })
-        
+        });
     });
+
+
+    
+    test('4. post /register with invalid data {password}', (done) => {
+        request(app)
+        .post('/register')
+        .send({username: 'wamda', email: 'wamda1096@gmail.com', password: 'eou1235'})
+        .expect(404)
+        .end((err, res) =>{
+            if(err) return done(err);
+            done();
+        });
+    });
+
+    
+
 });
+
+
 
 
 afterAll(() => connection.end());

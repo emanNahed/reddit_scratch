@@ -3,11 +3,11 @@ const login = require('./login');
 const posts = require('./posts');
 const profile = require('./profile');
 const logout = require('./logout');
-
+const home= require('./home');
 
 const router = require('express').Router();
 
-
+router.use('/', home);
 router.use('/register', register);
 router.use('/login', login);
 router.use('/posts', posts);

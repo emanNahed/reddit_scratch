@@ -1,14 +1,13 @@
-const button = document.getElementById('form-row-submit');
+const button = document.getElementById('login-button');
 const inputs = document.querySelectorAll('input');
 const constraints = document.querySelectorAll('.constraints');
 
 console.log(button);
-const signup = (e) => {
+const signin = (e) => {
     e.preventDefault();
     const reqBody = {
-        username: inputs[0].value,
-        email: inputs[1].value,
-        password: inputs[2].value
+        email: inputs[0].value,
+        password: inputs[1].value
     };
 
     const header = {
@@ -16,7 +15,7 @@ const signup = (e) => {
         'Content-Type': 'application/json'
     }
 
-    fetch('/register', {method: 'POST', headers: header, body: JSON.stringify(reqBody)})
+    fetch('/login', {method: 'POST', headers: header, body: JSON.stringify(reqBody)})
         .then(response => {
             if (response.redirected)
                 window.location.href = response.url;
@@ -25,4 +24,4 @@ const signup = (e) => {
     
 };
 
-button.addEventListener('click', (e) => signup(e));
+button.addEventListener('click', (e) => signin(e));
