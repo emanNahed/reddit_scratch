@@ -6,7 +6,7 @@ const dbUrl_prod= process.env.DB_URL;
 
 const NODE_ENV = process.env.NODE_ENV;
 
-let dbUrl= '';
+let dbUrl= dbUrl_prod;
 
 switch(NODE_ENV){
     case 'development': 
