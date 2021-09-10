@@ -2,7 +2,6 @@ const {userReg} = require('../../utils')
 const {checkEmail, addUser} = require('../../database/queries');
 const bcrypt = require('bcrypt');
 const signup = (req, res) => {
-    console.log('eman', req);
     const user = req.body;
     const userValid = userReg.validateAsync(user);
     const userExist = (rows) => {
