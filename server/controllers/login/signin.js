@@ -23,7 +23,7 @@ const signin = (req, res) => {
 
         res.cookie(process.env.COOKIE_AUTH, token, {httponly: true, secure: true}).redirect('/profile');
     })
-    .catch(err => res.status(404).json(err.message));
+    .catch(err => res.status(404).json({err: err.message}));
 };
 
 
