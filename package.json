@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "SET NODE_ENV=testing & jest",
-    "startv": "node server/index.js",
-    "start": "SET NODE_ENV=development & nodemon server/index.js"
+    "start": "node server/index.js",
+    "startdev": "SET NODE_ENV=development & nodemon server/index.js"
   },
   "author": "",
   "license": "ISC",
