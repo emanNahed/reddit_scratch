@@ -13,3 +13,4 @@
     2. login (controller, html page, test) 
     3. isAuth middleware
     4. logout (controller, html page, test)
+    5. deploy the project (create dummy home page, heroku deployment)

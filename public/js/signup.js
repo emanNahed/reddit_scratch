@@ -1,7 +1,8 @@
-const button = document.getElementById('.form-row-submit');
+const button = document.getElementById('form-row-submit');
 const inputs = document.querySelectorAll('input');
 const constraints = document.querySelectorAll('.constraints');
 
+console.log(button);
 const signup = (e) => {
     e.preventDefault();
     const reqBody = {
@@ -10,7 +11,12 @@ const signup = (e) => {
         password: inputs[2].value
     };
 
-    fetchRequest('/register', 'POST', reqBody)
+    const header = {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json'
+    }
+
+    fetch('/register', {method: 'POST', headers: header, body: JSON.stringify(reqBody)})
         .then(response => {
             if (response.redirected)
                 window.location.href = response.url;
@@ -19,4 +25,7 @@ const signup = (e) => {
     
 };
 
-button.addEventListener('submit', (e) => signup(e));
+button.addEventListener('click', (e) => {
+   console.log('wman');
+   return signup(e)
+});
