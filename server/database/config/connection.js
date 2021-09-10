@@ -18,8 +18,6 @@ switch(NODE_ENV){
     case 'production':
         dbUrl= dbUrl_prod;
         break;
-    default:
-        dbUrl= dbUrl_test;
 }
 
 if(!dbUrl){
