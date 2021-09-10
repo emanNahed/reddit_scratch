@@ -1,14 +1,13 @@
-const form = document.querySelector('form');
+const button = document.getElementById('.form-row-submit');
 const inputs = document.querySelectorAll('input');
-const invalids = document.querySelectorAll('.valid');
 const constraints = document.querySelectorAll('.constraints');
 
 const signup = (e) => {
     e.preventDefault();
     const reqBody = {
         username: inputs[0].value,
-        email: inputs[3].value,
-        password: inputs[4].value
+        email: inputs[1].value,
+        password: inputs[2].value
     };
 
     fetchRequest('/register', 'POST', reqBody)
@@ -20,3 +19,4 @@ const signup = (e) => {
     
 };
 
+button.addEventListener('submit', (e) => signup(e));

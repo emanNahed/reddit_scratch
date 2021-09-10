@@ -168,10 +168,4 @@ html{
         width: 200px !important;
     }
 
-    .form-register-with-email:after{
-        bottom: -80px;
-        left: 50%;
-        margin-left: -25px;
-    }
-
 }

@@ -1,5 +1,6 @@
 BEGIN;
 
+DROP TABLE IF EXISTS users, posts, subreddits, comments, subreddits_posts, user_vote_post CASCADE;
 CREATE TABLE users (
     id SERIAL,
     username VARCHAR(55),
@@ -44,7 +45,6 @@ CREATE TABLE subreddits_posts(
     FOREIGN KEY (post_id) REFERENCES posts(id)
 );
 
-CREATE TYPE vote AS ENUM ('up', 'down');
 CREATE TABLE user_vote_post(
     user_id INT,
     post_id INT,

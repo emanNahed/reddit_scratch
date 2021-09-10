@@ -1,12 +1,16 @@
 const express= require('express');
-const router = require('./routes');
 const {join} = require('path');
+const cookieParser = require('cookie-parser');
+require('env2')('config.env');
+const router = require('./routes');
 
 const app = express();
-require('env2')('config.env');
 app.use(express.static(join(__dirname, '..', 'public')));
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
+app.use(cookieParser());
+
+
 app.use(router);
 
 app.set('PORT', process.env.PORT || 3000);
