@@ -20,4 +20,4 @@ This is an educational purpose project to work with PERN stack, and apply a basi
 ![](https://i.ibb.co/Sy4Ryjg/mn.png)
 
 ### Deployement:
-* Demo link: https://wamda-reddit.herokuapp.com/
+* Demo link: https://skoun-reddit.herokuapp.com/
