@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "SET NODE_ENV=testing & jest",
-    "start": "node server/igindex.js"
+    "start": "node server/index.js"
   },
   "author": "",
   "license": "ISC",
