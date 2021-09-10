@@ -21,7 +21,7 @@ const signin = (req, res) => {
         //TODO: ? 
         const token = jwt.sign(rows[0], process.env.SECRET_TOKEN);
 
-        res.cookie(process.env.COOKIE_AUTH, token, {httponly: true, secure: true}).json('replace me with redirect');
+        res.cookie(process.env.COOKIE_AUTH, token, {httponly: true, secure: true}).redirect('/profile');
     })
     .catch(err => res.status(404).json(err.message));
 };

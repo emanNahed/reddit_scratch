@@ -2,7 +2,6 @@ const button = document.getElementById('login-button');
 const inputs = document.querySelectorAll('input');
 const constraints = document.querySelectorAll('.constraints');
 
-console.log(button);
 const signin = (e) => {
     e.preventDefault();
     const reqBody = {
@@ -20,7 +19,7 @@ const signin = (e) => {
             if (response.redirected)
                 window.location.href = response.url;
             else return response.json();
-        }).then(data => serverMessage.innerText = data.message);
+        }).then(data => console.log(data));
     
 };
 
