@@ -14,3 +14,8 @@
     3. isAuth middleware
     4. logout (controller, html page, test)
     5. deploy the project (create dummy home page, heroku deployment)
+    6. change the readme.md
+
+## Milestone3
+    1. profile page 
+        * change it content based on isAuth
